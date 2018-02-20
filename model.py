@@ -5,8 +5,6 @@ from keras.layers import Input, Dense, Flatten, Reshape
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import Conv2D
 from keras.optimizers import Adam
-import tensorflow as tf
-from keras.applications import Xception
 from keras.utils import multi_gpu_model
 
 import tensorflow as tf
