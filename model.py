@@ -5,6 +5,11 @@ from keras.layers import Input, Dense, Flatten, Reshape
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import Conv2D
 from keras.optimizers import Adam
+import tensorflow as tf
+from keras.applications import Xception
+from keras.utils import multi_gpu_model
+
+import tensorflow as tf
 
 from pixel_shuffler import PixelShuffler
 
@@ -58,5 +63,10 @@ x = Input( shape=IMAGE_SHAPE )
 
 autoencoder_A = Model( x, decoder_A( encoder(x) ) )
 autoencoder_B = Model( x, decoder_B( encoder(x) ) )
+
+# Optional multi-GPU support
+autoencoder_A = multi_gpu_model( autoencoder_A ,3)
+autoencoder_B = multi_gpu_model( autoencoder_B ,3)
+
 autoencoder_A.compile( optimizer=optimizer, loss='mean_absolute_error' )
 autoencoder_B.compile( optimizer=optimizer, loss='mean_absolute_error' )
