@@ -13,8 +13,7 @@ https://www.youtube.com/watch?v=7XchCsYtYMQ&feature=youtu.be
 
 ### My Setup
 
-I am using a desktop PC with one GTX1060 running ubuntu server 16.04.<br />
-Training the model for 100.000 epochs takes me about 30 hours. 
+I am personally training on 2 GTX 1080s and 1 GTX 970. I am getting a training rate of 2.74 its with my current training set.
 
 ### Install packages from apt
 ```
@@ -64,6 +63,8 @@ python3 2_train.py --src="angela merkel" --dst="taylor swift" --epochs=100000
 You can download a pre trained model for Angela Swift [here](https://anonfile.com/Ec8a61ddbf/Angela_Swift.zip)<br/>
 Just place the "models" folder next to the code directory.
 
+NOTE: I plan to add any models I personally train for the enjoyment of others. I will update this section as I go along. All credit for the "Angela Swift" model goes to DerWaldi.
+
 ### Step 3: Apply Face Swap on YouTube Video
 Perform facesqp on a youtube video.<br/>
 The "--start" and "--stop" parameters define in seconds where to clip the video.<br/>
@@ -86,12 +87,6 @@ Angela Merkel as Taylor Swift:<br/>
 The first two exampels are trained with images scraped from google, that's why the swapped faces look a bit frozen. <br/>
 The last one was trained using only two videos of interviews.<br/>
 You can see that it can transfer facial expressions much better than the ones trained with static images.
-
-
-## What's coming next?
-
-Since I am more into audio processing, I would like to transfer the concept of face swapping on music signals.<br/>
-If you have any suggestions, please let me know.
 
 ## Credits
 
